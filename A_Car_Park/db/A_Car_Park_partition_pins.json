@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "W_LED",
+					"strict" : false
+				},
+				{
+					"name" : "R_LED",
+					"strict" : false
+				},
+				{
+					"name" : "G1",
+					"strict" : false
+				},
+				{
+					"name" : "G2",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "exsens2",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "sensor2",
+					"strict" : false
+				},
+				{
+					"name" : "exsens1",
+					"strict" : false
+				},
+				{
+					"name" : "Password[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Password[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Password[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Password[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sensor1",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

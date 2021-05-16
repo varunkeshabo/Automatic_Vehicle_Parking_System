@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Wt_led",
+					"strict" : false
+				},
+				{
+					"name" : "Gate2",
+					"strict" : false
+				},
+				{
+					"name" : "exs2",
+					"strict" : false
+				},
+				{
+					"name" : "exs1",
+					"strict" : false
+				},
+				{
+					"name" : "Rst",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Sens2",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

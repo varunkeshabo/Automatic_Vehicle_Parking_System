@@ -1,0 +1,815 @@
+TimeQuest Timing Analyzer report for pass_chk
+Mon Apr 12 18:29:33 2021
+Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'current_state.S4'
+ 13. Slow 1200mV 85C Model Setup: 'current_state.S1'
+ 14. Slow 1200mV 85C Model Setup: 'CLK'
+ 15. Slow 1200mV 85C Model Hold: 'CLK'
+ 16. Slow 1200mV 85C Model Hold: 'current_state.S1'
+ 17. Slow 1200mV 85C Model Hold: 'current_state.S4'
+ 18. Slow 1200mV 85C Model Metastability Summary
+ 19. Slow 1200mV 0C Model Fmax Summary
+ 20. Slow 1200mV 0C Model Setup Summary
+ 21. Slow 1200mV 0C Model Hold Summary
+ 22. Slow 1200mV 0C Model Recovery Summary
+ 23. Slow 1200mV 0C Model Removal Summary
+ 24. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 25. Slow 1200mV 0C Model Setup: 'current_state.S4'
+ 26. Slow 1200mV 0C Model Setup: 'current_state.S1'
+ 27. Slow 1200mV 0C Model Setup: 'CLK'
+ 28. Slow 1200mV 0C Model Hold: 'CLK'
+ 29. Slow 1200mV 0C Model Hold: 'current_state.S1'
+ 30. Slow 1200mV 0C Model Hold: 'current_state.S4'
+ 31. Slow 1200mV 0C Model Metastability Summary
+ 32. Fast 1200mV 0C Model Setup Summary
+ 33. Fast 1200mV 0C Model Hold Summary
+ 34. Fast 1200mV 0C Model Recovery Summary
+ 35. Fast 1200mV 0C Model Removal Summary
+ 36. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 37. Fast 1200mV 0C Model Setup: 'current_state.S4'
+ 38. Fast 1200mV 0C Model Setup: 'current_state.S1'
+ 39. Fast 1200mV 0C Model Setup: 'CLK'
+ 40. Fast 1200mV 0C Model Hold: 'CLK'
+ 41. Fast 1200mV 0C Model Hold: 'current_state.S1'
+ 42. Fast 1200mV 0C Model Hold: 'current_state.S4'
+ 43. Fast 1200mV 0C Model Metastability Summary
+ 44. Multicorner Timing Analysis Summary
+ 45. Board Trace Model Assignments
+ 46. Input Transition Times
+ 47. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 48. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 49. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 50. Setup Transfers
+ 51. Hold Transfers
+ 52. Report TCCS
+ 53. Report RSKM
+ 54. Unconstrained Paths Summary
+ 55. Clock Status Summary
+ 56. Unconstrained Input Ports
+ 57. Unconstrained Output Ports
+ 58. Unconstrained Input Ports
+ 59. Unconstrained Output Ports
+ 60. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; pass_chk                                            ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                             ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; CLK              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }              ;
+; current_state.S1 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { current_state.S1 } ;
+; current_state.S4 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { current_state.S4 } ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+
+
+--------------------------------------
+; Slow 1200mV 85C Model Fmax Summary ;
+--------------------------------------
+No paths to report.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary       ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; current_state.S4 ; -3.265 ; -3.265        ;
+; current_state.S1 ; -2.033 ; -4.821        ;
+; CLK              ; -0.286 ; -0.855        ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary       ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLK              ; 0.690 ; 0.000         ;
+; current_state.S1 ; 0.778 ; 0.000         ;
+; current_state.S4 ; 3.046 ; 0.000         ;
++------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++------------------+--------+-----------------------+
+; Clock            ; Slack  ; End Point TNS         ;
++------------------+--------+-----------------------+
+; CLK              ; -3.000 ; -6.855                ;
+; current_state.S4 ; 0.416  ; 0.000                 ;
+; current_state.S1 ; 0.489  ; 0.000                 ;
++------------------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'current_state.S4'                                                                   ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; -3.265 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 1.000        ; -2.560     ; 0.704      ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'current_state.S1'                                                                              ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; -2.033 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 1.000        ; 0.056      ; 2.250      ;
+; -1.791 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.500        ; 3.148      ; 4.853      ;
+; -1.752 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.500        ; 3.147      ; 4.812      ;
+; -1.356 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 1.000        ; 3.148      ; 4.918      ;
+; -1.241 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 1.000        ; 3.147      ; 4.801      ;
+; -0.997 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 1.000        ; 0.057      ; 1.217      ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLK'                                                                                      ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; -0.286 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 1.000        ; -0.302     ; 0.972      ;
+; -0.286 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 1.000        ; -0.301     ; 0.973      ;
+; -0.283 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 1.000        ; -0.300     ; 0.971      ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLK'                                                                                      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; 0.690 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 0.000        ; -0.056     ; 0.850      ;
+; 0.692 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 0.000        ; -0.057     ; 0.851      ;
+; 0.693 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 0.000        ; -0.057     ; 0.852      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'current_state.S1'                                                                              ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; 0.778 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 0.000        ; 0.302      ; 1.110      ;
+; 1.073 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.000        ; 3.278      ; 4.593      ;
+; 1.210 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.000        ; 3.279      ; 4.731      ;
+; 1.579 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; -0.500       ; 3.278      ; 4.599      ;
+; 1.647 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; -0.500       ; 3.279      ; 4.668      ;
+; 1.713 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 0.000        ; 0.300      ; 2.043      ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'current_state.S4'                                                                   ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; 3.046 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 0.000        ; -2.426     ; 0.640      ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
+-------------------------------------
+; Slow 1200mV 0C Model Fmax Summary ;
+-------------------------------------
+No paths to report.
+
+
++-------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary        ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; current_state.S4 ; -2.881 ; -2.881        ;
+; current_state.S1 ; -1.832 ; -4.252        ;
+; CLK              ; -0.128 ; -0.381        ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary        ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLK              ; 0.584 ; 0.000         ;
+; current_state.S1 ; 0.744 ; 0.000         ;
+; current_state.S4 ; 2.774 ; 0.000         ;
++------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------+--------+----------------------+
+; Clock            ; Slack  ; End Point TNS        ;
++------------------+--------+----------------------+
+; CLK              ; -3.000 ; -6.855               ;
+; current_state.S4 ; 0.426  ; 0.000                ;
+; current_state.S1 ; 0.463  ; 0.000                ;
++------------------+--------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'current_state.S4'                                                                    ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; -2.881 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 1.000        ; -2.324     ; 0.637      ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'current_state.S1'                                                                               ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; -1.832 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 1.000        ; 0.027      ; 2.088      ;
+; -1.592 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.500        ; 2.834      ; 4.388      ;
+; -1.578 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.500        ; 2.835      ; 4.376      ;
+; -1.304 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 1.000        ; 2.835      ; 4.602      ;
+; -1.117 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 1.000        ; 2.834      ; 4.413      ;
+; -0.842 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 1.000        ; 0.029      ; 1.101      ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLK'                                                                                       ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; -0.128 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 1.000        ; -0.247     ; 0.870      ;
+; -0.128 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 1.000        ; -0.246     ; 0.871      ;
+; -0.125 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 1.000        ; -0.245     ; 0.869      ;
++--------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLK'                                                                                       ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; 0.584 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 0.000        ; -0.027     ; 0.758      ;
+; 0.588 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 0.000        ; -0.029     ; 0.760      ;
+; 0.588 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 0.000        ; -0.028     ; 0.761      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'current_state.S1'                                                                               ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; 0.744 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 0.000        ; 0.247      ; 1.021      ;
+; 1.051 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.000        ; 2.952      ; 4.226      ;
+; 1.250 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.000        ; 2.953      ; 4.426      ;
+; 1.520 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; -0.500       ; 2.952      ; 4.195      ;
+; 1.534 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; -0.500       ; 2.953      ; 4.210      ;
+; 1.568 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 0.000        ; 0.245      ; 1.843      ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'current_state.S4'                                                                    ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; 2.774 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 0.000        ; -2.205     ; 0.589      ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary        ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; current_state.S4 ; -1.236 ; -1.236        ;
+; current_state.S1 ; -0.851 ; -1.535        ;
+; CLK              ; 0.405  ; 0.000         ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary        ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLK              ; 0.235 ; 0.000         ;
+; current_state.S1 ; 0.378 ; 0.000         ;
+; current_state.S4 ; 1.611 ; 0.000         ;
++------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------+--------+----------------------+
+; Clock            ; Slack  ; End Point TNS        ;
++------------------+--------+----------------------+
+; CLK              ; -3.000 ; -6.186               ;
+; current_state.S1 ; 0.407  ; 0.000                ;
+; current_state.S4 ; 0.457  ; 0.000                ;
++------------------+--------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'current_state.S4'                                                                    ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; -1.236 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 1.000        ; -1.413     ; 0.334      ;
++--------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'current_state.S1'                                                                               ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; -0.851 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.500        ; 1.624      ; 2.679      ;
+; -0.652 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.500        ; 1.624      ; 2.480      ;
+; -0.544 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 1.000        ; -0.036     ; 1.087      ;
+; -0.073 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 1.000        ; 1.624      ; 2.401      ;
+; -0.049 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 1.000        ; 1.624      ; 2.377      ;
+; -0.032 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 1.000        ; -0.035     ; 0.576      ;
++--------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLK'                                                                                      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; 0.405 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 1.000        ; -0.093     ; 0.479      ;
+; 0.406 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 1.000        ; -0.093     ; 0.478      ;
+; 0.408 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 1.000        ; -0.092     ; 0.477      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLK'                                                                                       ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node          ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+; 0.235 ; next_state.S1_191 ; current_state.S1 ; current_state.S1 ; CLK         ; 0.000        ; 0.036      ; 0.385      ;
+; 0.236 ; next_state.S2_183 ; current_state.S2 ; current_state.S1 ; CLK         ; 0.000        ; 0.035      ; 0.385      ;
+; 0.237 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; CLK         ; 0.000        ; 0.036      ; 0.387      ;
++-------+-------------------+------------------+------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'current_state.S1'                                                                               ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node           ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+; 0.378 ; current_state.S2 ; next_state.S2_183 ; CLK              ; current_state.S1 ; 0.000        ; 0.093      ; 0.501      ;
+; 0.466 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; 0.000        ; 1.690      ; 2.271      ;
+; 0.503 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; 0.000        ; 1.691      ; 2.309      ;
+; 0.892 ; current_state.S2 ; next_state.S1_191 ; CLK              ; current_state.S1 ; 0.000        ; 0.092      ; 1.014      ;
+; 1.061 ; current_state.S4 ; next_state.S1_191 ; current_state.S4 ; current_state.S1 ; -0.500       ; 1.690      ; 2.366      ;
+; 1.270 ; current_state.S4 ; next_state.S4_171 ; current_state.S4 ; current_state.S1 ; -0.500       ; 1.691      ; 2.576      ;
++-------+------------------+-------------------+------------------+------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'current_state.S4'                                                                    ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node    ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+; 1.611 ; current_state.S2 ; Gate$latch ; CLK          ; current_state.S4 ; 0.000        ; -1.341     ; 0.290      ;
++-------+------------------+------------+--------------+------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++-------------------+--------+-------+----------+---------+---------------------+
+; Clock             ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack  ; -3.265 ; 0.235 ; N/A      ; N/A     ; -3.000              ;
+;  CLK              ; -0.286 ; 0.235 ; N/A      ; N/A     ; -3.000              ;
+;  current_state.S1 ; -2.033 ; 0.378 ; N/A      ; N/A     ; 0.407               ;
+;  current_state.S4 ; -3.265 ; 1.611 ; N/A      ; N/A     ; 0.416               ;
+; Design-wide TNS   ; -8.941 ; 0.0   ; 0.0      ; 0.0     ; -6.855              ;
+;  CLK              ; -0.855 ; 0.000 ; N/A      ; N/A     ; -6.855              ;
+;  current_state.S1 ; -4.821 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  current_state.S4 ; -3.265 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++-------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; white_led     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; red_led       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; green_led     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Gate          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; ext_sens                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pass[0]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pass[1]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pass[2]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pass[3]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; Reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLK                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sens2                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sens1                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; white_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; red_led       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; green_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; Gate          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; white_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; red_led       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; green_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; Gate          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; white_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; red_led       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; green_led     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; Gate          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Setup Transfers                                                                 ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; current_state.S1 ; CLK              ; 3        ; 0        ; 0        ; 0        ;
+; CLK              ; current_state.S1 ; 2        ; 0        ; 0        ; 0        ;
+; current_state.S4 ; current_state.S1 ; 2        ; 2        ; 0        ; 0        ;
+; CLK              ; current_state.S4 ; 1        ; 0        ; 0        ; 0        ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------+
+; Hold Transfers                                                                  ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; current_state.S1 ; CLK              ; 3        ; 0        ; 0        ; 0        ;
+; CLK              ; current_state.S1 ; 2        ; 0        ; 0        ; 0        ;
+; current_state.S4 ; current_state.S1 ; 2        ; 2        ; 0        ; 0        ;
+; CLK              ; current_state.S4 ; 1        ; 0        ; 0        ; 0        ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 5     ; 5    ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------+
+; Clock Status Summary                                     ;
++------------------+------------------+------+-------------+
+; Target           ; Clock            ; Type ; Status      ;
++------------------+------------------+------+-------------+
+; CLK              ; CLK              ; Base ; Constrained ;
+; current_state.S1 ; current_state.S1 ; Base ; Constrained ;
+; current_state.S4 ; current_state.S4 ; Base ; Constrained ;
++------------------+------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sens1      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sens2      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Gate        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; red_led     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sens1      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sens2      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Gate        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; red_led     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+    Info: Processing started: Mon Apr 12 18:29:30 2021
+Info: Command: quartus_sta pass_chk -c pass_chk
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 4 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pass_chk.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+    Info (332105): create_clock -period 1.000 -name current_state.S1 current_state.S1
+    Info (332105): create_clock -period 1.000 -name current_state.S4 current_state.S4
+Warning (332125): Found combinational loop of 2 nodes File: D:/Modified Code/pass_chk/pass_chk.vhd Line: 89
+    Warning (332126): Node "red~0|datad"
+    Warning (332126): Node "red~0|combout"
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info (332140): No fmax paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.265
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.265              -3.265 current_state.S4 
+    Info (332119):    -2.033              -4.821 current_state.S1 
+    Info (332119):    -0.286              -0.855 CLK 
+Info (332146): Worst-case hold slack is 0.690
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.690               0.000 CLK 
+    Info (332119):     0.778               0.000 current_state.S1 
+    Info (332119):     3.046               0.000 current_state.S4 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -6.855 CLK 
+    Info (332119):     0.416               0.000 current_state.S4 
+    Info (332119):     0.489               0.000 current_state.S1 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332140): No fmax paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.881
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.881              -2.881 current_state.S4 
+    Info (332119):    -1.832              -4.252 current_state.S1 
+    Info (332119):    -0.128              -0.381 CLK 
+Info (332146): Worst-case hold slack is 0.584
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.584               0.000 CLK 
+    Info (332119):     0.744               0.000 current_state.S1 
+    Info (332119):     2.774               0.000 current_state.S4 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -6.855 CLK 
+    Info (332119):     0.426               0.000 current_state.S4 
+    Info (332119):     0.463               0.000 current_state.S1 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.236
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.236              -1.236 current_state.S4 
+    Info (332119):    -0.851              -1.535 current_state.S1 
+    Info (332119):     0.405               0.000 CLK 
+Info (332146): Worst-case hold slack is 0.235
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.235               0.000 CLK 
+    Info (332119):     0.378               0.000 current_state.S1 
+    Info (332119):     1.611               0.000 current_state.S4 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -6.186 CLK 
+    Info (332119):     0.407               0.000 current_state.S1 
+    Info (332119):     0.457               0.000 current_state.S4 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4839 megabytes
+    Info: Processing ended: Mon Apr 12 18:29:33 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

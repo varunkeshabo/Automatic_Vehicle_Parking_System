@@ -1,0 +1,88 @@
+|A_Car_Park
+clk => park_space:A0.Clk
+clk => pass_chk:A1.CLK
+reset => park_space:A0.Rst
+reset => pass_chk:A1.Reset
+sensor1 => pass_chk:A1.sens1
+sensor2 => park_space:A0.Sens2
+sensor2 => pass_chk:A1.sens2
+exsens1 => park_space:A0.exs1
+exsens2 => park_space:A0.exs2
+exsens2 => pass_chk:A1.ext_sens
+W_LED <= park_space:A0.Wt_led
+G_LED <= pass_chk:A1.green_led
+R_LED <= pass_chk:A1.red_led
+G1 <= pass_chk:A1.Gate
+G2 <= park_space:A0.Gate2
+Password[0] => pass_chk:A1.pass[0]
+Password[1] => pass_chk:A1.pass[1]
+Password[2] => pass_chk:A1.pass[2]
+Password[3] => pass_chk:A1.pass[3]
+
+
+|A_Car_Park|park_space:A0
+Clk => current_state~1.DATAIN
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Sens2 => next_state.DATAA
+Sens2 => next_state.DATAA
+exs1 => next_state.OUTPUTSELECT
+exs1 => next_state.OUTPUTSELECT
+exs1 => Selector4.IN2
+exs2 => Selector3.IN3
+exs2 => Selector4.IN3
+exs2 => Selector5.IN2
+exs2 => Selector4.IN1
+Wt_led <= Wt_led$latch.DB_MAX_OUTPUT_PORT_TYPE
+Gate2 <= Gate2$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|A_Car_Park|pass_chk:A1
+CLK => counter5bit:t0.rest
+CLK => current_state~1.DATAIN
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+sens1 => Selector15.IN4
+sens1 => Selector17.IN2
+sens2 => Selector17.IN4
+sens2 => Selector13.IN2
+ext_sens => ~NO_FANOUT~
+white_led => Selector10.IN1
+white_led => Selector14.IN1
+white_led => next_state.S3_215.LATCH_ENABLE
+white_led => Selector12.IN0
+white_led => Selector16.IN0
+white_led => Selector18.IN0
+pass[0] => Equal0.IN1
+pass[1] => Equal0.IN0
+pass[2] => Equal0.IN3
+pass[3] => Equal0.IN2
+red_led <= red.DB_MAX_OUTPUT_PORT_TYPE
+green_led <= <VCC>
+Gate <= Gate$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|A_Car_Park|pass_chk:A1|counter5bit:t0
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+q[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= cnt[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= cnt[4].DB_MAX_OUTPUT_PORT_TYPE
+
+

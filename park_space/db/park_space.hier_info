@@ -1,0 +1,19 @@
+|park_space
+Clk => current_state~1.DATAIN
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Rst => current_state.OUTPUTSELECT
+Sens2 => next_state.DATAA
+Sens2 => next_state.DATAA
+exs1 => next_state.OUTPUTSELECT
+exs1 => next_state.OUTPUTSELECT
+exs1 => Selector4.IN2
+exs2 => Selector3.IN3
+exs2 => Selector4.IN3
+exs2 => Selector5.IN2
+exs2 => Selector4.IN1
+Wt_led <= Wt_led$latch.DB_MAX_OUTPUT_PORT_TYPE
+Gate2 <= Gate2$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

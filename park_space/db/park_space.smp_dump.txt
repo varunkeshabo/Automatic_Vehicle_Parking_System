@@ -1,0 +1,7 @@
+
+State Machine - |park_space|current_state
+Name current_state.No_space current_state.S_checker current_state.A_space current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.A_space 0 0 1 1 
+current_state.S_checker 0 1 0 1 
+current_state.No_space 1 0 0 1 

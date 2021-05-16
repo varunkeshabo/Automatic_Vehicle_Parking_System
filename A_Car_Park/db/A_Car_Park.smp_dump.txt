@@ -1,0 +1,16 @@
+
+State Machine - |A_Car_Park|pass_chk:A1|current_state
+Name current_state.S5 current_state.S4 current_state.S3 current_state.S2 current_state.S1 current_state.IDLE 
+current_state.IDLE 0 0 0 0 0 0 
+current_state.S1 0 0 0 0 1 1 
+current_state.S2 0 0 0 1 0 1 
+current_state.S3 0 0 1 0 0 1 
+current_state.S4 0 1 0 0 0 1 
+current_state.S5 1 0 0 0 0 1 
+
+State Machine - |A_Car_Park|park_space:A0|current_state
+Name current_state.No_space current_state.S_checker current_state.A_space current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.A_space 0 0 1 1 
+current_state.S_checker 0 1 0 1 
+current_state.No_space 1 0 0 1 

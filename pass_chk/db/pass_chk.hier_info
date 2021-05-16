@@ -1,0 +1,40 @@
+|pass_chk
+CLK => counter5bit:t0.rest
+CLK => current_state~1.DATAIN
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+Reset => current_state.OUTPUTSELECT
+sens1 => Selector12.IN3
+sens1 => Selector14.IN1
+sens2 => Selector14.IN2
+sens2 => Selector10.IN0
+ext_sens => ~NO_FANOUT~
+pass[0] => ~NO_FANOUT~
+pass[1] => ~NO_FANOUT~
+pass[2] => ~NO_FANOUT~
+pass[3] => ~NO_FANOUT~
+white_led <= comb.DB_MAX_OUTPUT_PORT_TYPE
+red_led <= red.DB_MAX_OUTPUT_PORT_TYPE
+green_led <= <VCC>
+Gate <= Gate$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pass_chk|counter5bit:t0
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+rest => cnt.OUTPUTSELECT
+q[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= cnt[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= cnt[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
